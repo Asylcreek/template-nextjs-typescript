@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+### Some things to not before you start
+
+- This project was bootstrapped with yarn, although you can remove the `yarn.lock` file and use whatever package manager you want to install the dependencies
+- Husky and lint-staged are installed in this project
+- This project uses the `app` directory, but you can delete it and add the `pages` directory
+
 ## Getting Started
 
 First, run the development server:
