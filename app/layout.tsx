@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
-import "./globals.css";
+import './base.css';
 
 export const metadata: Metadata = {
-  title: "Homepage",
-  description: "The homepage of your app",
+  title: 'Homepage',
+  description: 'The homepage of your app',
 };
 
 interface IRootLayoutProps {
