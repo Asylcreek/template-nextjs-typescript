@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: development
     steps:
       - name: Checkout repo code
         uses: actions/checkout@v3
@@ -12,10 +14,14 @@ jobs:
       - name: Use node 18
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18.17'
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
 
       - name: Build app
-        run: yarn run build
+        run: pnpm build
