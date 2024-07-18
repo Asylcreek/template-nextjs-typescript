@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - This project was bootstrapped with pnpm, although you can remove the `pnpm.yaml` file and use whatever package manager you want to install the dependencies
 - This project uses the `app` directory, but you can delete it and add the `pages` directory
 - A Github workflow to check your app on push and pull-request is configured as well
-  - it checks format
+  - it checks formatting
   - it checks linting
   - it builds the app
 
