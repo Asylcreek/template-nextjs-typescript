@@ -17,13 +17,9 @@ jobs:
           version: 8
       - name: Install dependencies
         run: pnpm install
-      - name: ESLint - flat
-        run: pnpm dlx eslint .
-      - name: ESLint - eslintrc
-        run: pnpm dlx eslint .
-        env:
-          ESLINT_USE_FLAT_CONFIG: "false"
-      - name: Prettier
-        run: pnpm dlx prettier --check .
+      - name: Next lint
+        run: pnpm run lint
+      - name: Check format
+        run: pnpm run check-format
       - name: Build
-        run: npm run build
+        run: pnpm run build
