@@ -1,0 +1,29 @@
+name: Check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.17
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
+      - name: ESLint - flat
+        run: pnpm dlx eslint .
+      - name: ESLint - eslintrc
+        run: pnpm dlx eslint .
+        env:
+          ESLINT_USE_FLAT_CONFIG: "false"
+      - name: Prettier
+        run: pnpm dlx prettier --check .
+      - name: Build
+        run: npm run build
