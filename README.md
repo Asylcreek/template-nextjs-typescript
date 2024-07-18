@@ -3,9 +3,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ### Some things to not before you start
 
 - This project was bootstrapped with pnpm, although you can remove the `pnpm.yaml` file and use whatever package manager you want to install the dependencies
-- husky and lint-staged are installed in this project
 - This project uses the `app` directory, but you can delete it and add the `pages` directory
-- A Github workflow to build your app on push and pull-request is configures as well
+- A Github workflow to check your app on push and pull-request is configured as well
+  - it checks format
+  - it checks linting
+  - it builds the app
 
 ## Getting Started
 
