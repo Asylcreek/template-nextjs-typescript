@@ -16,10 +16,10 @@ jobs:
         with:
           version: 8
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Next lint
         run: pnpm run lint
       - name: Check format
-        run: pnpm run check-format
+        run: pnpm run check:format
       - name: Build
         run: pnpm run build
