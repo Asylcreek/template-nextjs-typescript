@@ -1,3 +1,6 @@
+import nextTypescript from 'eslint-config-next/typescript';
+import next from 'eslint-config-next';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,14 +15,13 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default [
-  ...compat.extends(
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'next',
-    'next/core-web-vitals',
-    'prettier'
-  ),
+const config = [
+  ...nextTypescript,
+  ...compat.extends('eslint:recommended'),
+  ...compat.extends('plugin:@typescript-eslint/recommended'),
+  ...next,
+  ...nextCoreWebVitals,
+  ...compat.extends('prettier'),
   {
     plugins: {
       '@typescript-eslint': typescriptEslint,
@@ -41,4 +43,15 @@ export default [
       'react/no-unescaped-entities': 'off',
     },
   },
+  {
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      'out/**',
+      'build/**',
+      'next-env.d.ts',
+    ],
+  },
 ];
+
+export default config;
